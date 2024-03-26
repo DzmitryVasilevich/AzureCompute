@@ -1,13 +1,13 @@
 variable "rg_name" {
     description = "Azure resource group name"
     type        = string
-    default     = "task3-rg-eastus"  
+    default     = "task4-rg-eastus"  
 }
 
 variable "vnet_name" {
     description = "A virtual network name"
     type        = string
-    default     = "task3-vnet-eastus"  
+    default     = "task4-vnet-eastus"  
 }
 
 variable "net_prefix" {
@@ -19,25 +19,19 @@ variable "net_prefix" {
 variable "subnet1_name" {
     description = "A subnet name"
     type        = string
-    default     = "task3-subnet1-eastus"  
-}
-
-variable "subnet2_name" {
-    description = "A subnet name"
-    type        = string
-    default     = "task3-subnet2-eastus"  
+    default     = "task4-subnet1-eastus"  
 }
 
 variable "nic_name" {
     description = "A network interface card (NIC) name"
     type        = string
-    default     = "task3-nic-int-eastus"  
+    default     = "task4-nic-int-eastus"  
 }
 
 variable "vm_name" {
     description = "A virtual machine name"
     type        = string
-    default     = "task3-vm-eastus"  
+    default     = "task4-vm-eastus"  
 }
 
 variable "vm_src_img_ref" {
@@ -50,9 +44,9 @@ variable "vm_src_img_ref" {
     })
 
     default = {
-      publisher = "MicrosoftWindowsServer"
-      offer     = "WindowsServer"
-      sku       = "2016-DataCenter"
-      version   = "latest"  
+      publisher = "Canonical"
+      offer     = "0001-com-ubuntu-server-jammy"
+      sku       = "22_04-lts"
+      version   = "latest"
     }   
 }  
