@@ -34,7 +34,7 @@ resource "azurerm_subnet" "main" {
   name = var.subnet1_name
   resource_group_name = azurerm_resource_group.main.name
   virtual_network_name = var.vnet_name
-  address_prefixes = ["${var.net_prefix}.2.0/24"]
+  address_prefixes = ["${var.net_prefix}.0.0/24"]
   private_endpoint_network_policies_enabled = true
 }
 
@@ -59,15 +59,11 @@ resource "azurerm_linux_virtual_machine" "main" {
   size = "Standard_F2s_v2"
   admin_username = var.vm_admin_name
   admin_password = "pswd-Enter"
+  disable_password_authentication = false
 
     network_interface_ids = [
       azurerm_network_interface.internal.id
      ]
-
-    admin_ssh_key {
-      username   = "adminuser"
-      public_key = file("~/.ssh/id_rsa.pub")
-  }
 
     os_disk {
       caching = "ReadWrite"

@@ -7,5 +7,5 @@ output "subnet_resource_id" {
 }
 
 output "vm_resource_id" {
-    value = azurerm_windows_virtual_machine.main.id
+    value = azurerm_linux_virtual_machine.main.id
 }
