@@ -34,6 +34,12 @@ variable "vm_name" {
     default     = "task4-vm-eastus"  
 }
 
+variable "vm_admin_name" {
+    description = "A virtual machine admin name"
+    type        = string
+    default     = "user.admin"  
+}
+
 variable "vm_src_img_ref" {
     description = "Settings for a VM source image reference"
     type        = object({
